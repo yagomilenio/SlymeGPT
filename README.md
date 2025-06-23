@@ -37,7 +37,17 @@ The profiles can be found in the the Chrome directory.
 - **Linux**: `~/.config/google-chrome/`  
 - **MacOS**: `~/Library/Application Support/Google/Chrome/`  
 
-After selecting a profile, run `python open_browser.py` to open a Selenium-controlled browser.  
+⚠️ Before running `python open_browser.py`, change line 264 in `slyme.py`:
+
+From:
+`self.driver = uc.Chrome(options=options, use_subprocess=True)`
+
+To:
+`self.driver = uc.Chrome(options=options, use_subprocess=False)`
+
+✅ After this step, you can change it back to `use_subprocess=True` if needed.
+
+Run `python open_browser.py` to open a Selenium-controlled browser.
 You should see the following screen:  
 ![ChatGPT Home Screen](assets/step2_chatgpt_login.png)  
 From there, log in to ChatGPT (make sure to enable 'Stay Logged In') and click through any first-time login notifications.  
